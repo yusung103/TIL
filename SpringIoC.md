@@ -13,7 +13,7 @@ IoC(Inversion of Control)는 **제어의 역전**을 의미한다
 사용할 객체를 **직접 생성하지 않고** 객체의 생명주기 관리를 `IoC Container`로 위임한다  
 
 즉 Spring IoC란  
-`객체의 관리를 컨테이너에 맡겨 제어권이 넘어간 것`을 제어 역전이라고 한다  
+`객체의 관리를 컨테이너에 맡겨 제어권이 넘어간 것`을 **제어 역전**이라고 한다  
 <br>
 제어 역전을 통해 *의존성 주입(DI; Dependency Injection)*, *관점 지향 프로그래밍(AOP; Aspect-Oriented Programming)* 등이 가능해진다
 
