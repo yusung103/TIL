@@ -19,10 +19,9 @@ IoC(Inversion of Control)는 **제어의 역전**을 의미한다
 
 ***
 
-### IoC Container? 🤔
+### IoC Container? (= Spring Container) 🤔
 
 > 객체들의 생명주기의 관리, 생성된 인스턴스들의 추가적인 기능(의존성 주입)들을 제공하는 것
->> = 스프링 컨테이너
 
 #### IoC의 컨테이너의 장점 😋
 * IoC 컨테이너는 객체를 생성을 책임지고 의존성을 관리
