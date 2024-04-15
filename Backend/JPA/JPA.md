@@ -32,7 +32,7 @@ public class User{
 **2. Respository 인터페이스 정의**
 > 엔티티를 조작하기 위한 인터페이스를 정의
 ```java
-// 해당 인터페이스가 데이터 접근 계층의 컴포넌트임을 선언.
+// 해당 인터페이스가 데이터 접근 계층의 컴포넌트임을 선언
 // "Repository"를 의미
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
@@ -64,7 +64,7 @@ public class UserService{
         return userRepository.findByUsername(username);
     }
 
-    // 다른 메서드...
+    // other method...
 }
 ```
 <br>
@@ -101,6 +101,6 @@ public class UserController{
         }
     }
 
-    // 다른 메서드...
+    // other method...
 }
 ```
