@@ -15,9 +15,7 @@ public class DeleteBoardServiceImpl implements DeleteBoardService {
     private final BoardRepository boardRepository;
 
     public Long execute(Long id){
-        boardRepository.findById(id)
-                .orElseThrow(RuntimeException::new);
-
-        return id;
+        boardRepository.deleteById(id);
+                return id;
     }
 }
