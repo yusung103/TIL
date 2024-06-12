@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,22 +20,11 @@ public class GetBoardListServiceImpl implements GetBoardListService {
 
     private final BoardRepository boardRepository;
 
-    @Override
     public List<BoardListResponse> execute() {
-        try {
             List<Board> boardList = boardRepository.findAll();
 
-            List<BoardListResponse> boardListResponses = new ArrayList<>();
-
-            for(Board board : boardList){
-                boardListResponses.add(
-                        new BoardListResponse(board)
-                );
-            }
-            return boardListResponses;
-        } catch (Exception ignored){
-
-        }
-        return null;
+            return boardList.stream()
+                    .map(Board::toDto)
+                    .collect(Collectors.toList());
     }
 }

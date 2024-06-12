@@ -1,6 +1,7 @@
 package com.example.crud.domian.board.entity;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
+import com.example.crud.domian.board.dto.response.BoardListResponse;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,13 +22,10 @@ public class Board {
     @Column(nullable = false)
     private String content;
 
-    public Board(BoardRequest boardRequest){
-        this.title = boardRequest.getTitle();
-        this.content =  boardRequest.getContent();
-    }
-
-    public void update(BoardRequest boardRequest){
-        this.title = boardRequest.getTitle();
-        this.content =  boardRequest.getContent();
+    public BoardListResponse toDto(){
+        return BoardListResponse.builder()
+                .id(this.id)
+                .title(this.title)
+                .build();
     }
 }

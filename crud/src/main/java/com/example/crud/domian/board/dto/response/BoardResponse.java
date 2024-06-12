@@ -6,16 +6,9 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
+@Builder
 public class BoardResponse {
     private Long id;
     private String title;
     private String content;
-
-    @Builder
-    public BoardResponse(Board board){
-        this.id = board.getId();
-        this.title = board.getTitle();
-        this.content = board.getContent();
-    }
 }

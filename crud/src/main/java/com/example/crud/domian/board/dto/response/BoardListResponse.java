@@ -8,20 +8,10 @@ import lombok.Getter;
 import java.util.Optional;
 
 @Getter
-@AllArgsConstructor
+@Builder
+
 public class BoardListResponse {
     private Long id;
     private String title;
 
-
-    @Builder
-    public BoardListResponse(Board board){
-        this.id = board.getId();
-        this.title = board.getTitle();
-    }
-
-    public BoardListResponse(Optional<Board> board){
-        this.id = board.get().getId();
-        this.title = board.get().getTitle();
-    }
 }
