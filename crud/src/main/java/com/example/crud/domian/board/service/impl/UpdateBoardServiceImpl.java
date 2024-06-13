@@ -20,6 +20,7 @@ public class UpdateBoardServiceImpl implements UpdateBoardService {
         Board board = boardRepository.findById(id).orElseThrow(
                 () -> new CustomException(ErrorCode.BOARD_NOT_FOUND)
         );
-        board.update(boardRequest);
+         board.update(boardRequest);
+         boardRepository.save(board);
     }
 }

@@ -22,10 +22,15 @@ public class Board {
     @Column(nullable = false)
     private String content;
 
-    public BoardListResponse toDto(){
+    public static BoardListResponse toDto(Board board){
         return BoardListResponse.builder()
-                .id(this.id)
-                .title(this.title)
+                .id(board.getId())
+                .title(board.getTitle())
                 .build();
+    }
+
+    public void update(BoardRequest boardRequest){
+        this.title = boardRequest.getTitle();
+        this.content = boardRequest.getContent();
     }
 }
