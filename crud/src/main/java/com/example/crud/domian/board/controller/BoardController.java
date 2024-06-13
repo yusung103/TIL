@@ -2,6 +2,7 @@ package com.example.crud.domian.board.controller;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
 import com.example.crud.domian.board.dto.response.BoardListResponse;
+import com.example.crud.domian.board.dto.response.BoardResponse;
 import com.example.crud.domian.board.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -37,9 +38,9 @@ public class BoardController {
 
     // 글 하나 불러오기
     @GetMapping("/{id}")
-    public ResponseEntity<Void> getOne(@PathVariable Long id){
-        getBoardService.execute(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<BoardResponse> getOne(@PathVariable Long id){
+        BoardResponse response = getBoardService.execute(id);
+        return ResponseEntity.ok(response);
     }
 
     // 글 수정
