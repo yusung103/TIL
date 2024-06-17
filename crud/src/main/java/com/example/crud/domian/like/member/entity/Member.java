@@ -1,4 +1,4 @@
-package com.example.crud.domian.like.member;
+package com.example.crud.domian.like.member.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

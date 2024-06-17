@@ -2,7 +2,7 @@ package com.example.crud.domian.like.heart.repository;
 
 import com.example.crud.domian.board.entity.Board;
 import com.example.crud.domian.like.heart.entity.Heart;
-import com.example.crud.domian.like.member.Member;
+import com.example.crud.domian.like.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,7 +1,7 @@
 package com.example.crud.domian.like.heart.entity;
 
 import com.example.crud.domian.board.entity.Board;
-import com.example.crud.domian.like.member.Member;
+import com.example.crud.domian.like.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
