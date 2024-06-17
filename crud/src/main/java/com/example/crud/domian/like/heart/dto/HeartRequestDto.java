@@ -1,4 +1,4 @@
-package com.example.crud.domian.like.dto;
+package com.example.crud.domian.like.heart.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
