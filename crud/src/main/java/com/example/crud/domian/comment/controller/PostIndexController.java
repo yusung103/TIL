@@ -7,8 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class PostIndexController {
-
-    private final CommentRepository commentRepository;
-    private final PostsRepository postsRepository;
+public class PostIndexController {\
 }
