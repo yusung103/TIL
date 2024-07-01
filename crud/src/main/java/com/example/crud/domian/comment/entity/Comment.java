@@ -1,6 +1,6 @@
 package com.example.crud.domian.comment.entity;
 
-import com.example.crud.domian.board.entity.Board;
+import com.example.crud.global.entity.TimeEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,12 +15,12 @@ import org.springframework.data.annotation.LastModifiedDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "comment")
-public class Comment {
+public class Comment extends TimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "comment_id")
-    private String id;
+    private Long id;
 
     @Column(columnDefinition = "TEXT")
     private String comment;
