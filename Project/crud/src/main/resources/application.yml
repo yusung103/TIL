@@ -14,18 +14,18 @@ spring:
         format_sql: true
         show_sql: true
 
-#logging:
-#  level:
-#    com.tutorial: debug
-#
-#jwt:
-#  secret:
-#
-#  jpa:
-#    database-platform: org.hibernate.dialect.MySQL8Dialect
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
+logging:
+  level:
+    com.tutorial: debug
+
+jwt:
+  secret:
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 #logging:
 #  level:

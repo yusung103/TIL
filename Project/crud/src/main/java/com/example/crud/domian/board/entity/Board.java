@@ -18,7 +18,6 @@ import java.util.List;
 public class Board extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "board_id")
     private Long id;
 
     @Column(length = 50, nullable = false)
@@ -32,7 +31,7 @@ public class Board extends TimeEntity {
     @Column(columnDefinition = "integer default 0")
     private int view;
 
-    @OneToMany(mappedBy = "Board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @OrderBy("id asc")
     private List<Comment> comments;
 
