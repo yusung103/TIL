@@ -1,5 +1,6 @@
 package com.example.crud.domian.comment.entity;
 
+import com.example.crud.domian.board.entity.Board;
 import com.example.crud.global.entity.TimeEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -34,6 +35,6 @@ public class Comment extends TimeEntity {
     private String modifiedDate;
 
     @ManyToOne
-    @JoinColumn(name = "posts_id")
-    private Posts posts;
+    @JoinColumn(name = "board_id")
+    private Board board;
 }

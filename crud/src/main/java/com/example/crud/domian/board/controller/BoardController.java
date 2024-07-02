@@ -1,8 +1,8 @@
 package com.example.crud.domian.board.controller;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
-import com.example.crud.domian.board.dto.response.BoardListResponse;
-import com.example.crud.domian.board.dto.response.BoardResponse;
+import com.example.crud.domian.board.dto.response.BoardListResponseDto;
+import com.example.crud.domian.board.dto.response.BoardResponseDto;
 import com.example.crud.domian.board.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -31,15 +31,15 @@ public class BoardController {
 
     /** 모든 글 불러오기 */
     @GetMapping("/list")
-    public ResponseEntity<List<BoardListResponse>> getList(){
-        List<BoardListResponse> responses = getBoardListService.execute();
+    public ResponseEntity<List<BoardListResponseDto>> getList(){
+        List<BoardListResponseDto> responses = getBoardListService.execute();
         return ResponseEntity.ok(responses);
     }
 
     /** 글 하나 불러오기 */
     @GetMapping("/{id}")
-    public ResponseEntity<BoardResponse> getOne(@PathVariable Long id){
-        BoardResponse response = getBoardService.execute(id);
+    public ResponseEntity<BoardResponseDto> getOne(@PathVariable Long id){
+        BoardResponseDto response = getBoardService.execute(id);
         return ResponseEntity.ok(response);
     }
 

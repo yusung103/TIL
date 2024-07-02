@@ -1,9 +1,13 @@
 package com.example.crud.domian.board.entity;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
-import com.example.crud.domian.board.dto.response.BoardListResponse;
+import com.example.crud.domian.board.dto.response.BoardListResponseDto;
+import com.example.crud.domian.comment.entity.Comment;
+import com.example.crud.global.entity.TimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -11,20 +15,29 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "board")
-public class Board {
+public class Board extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "board_id")
     private Long id;
 
-    @Column(nullable = false)
+    @Column(length = 50, nullable = false)
     private String title;
 
-    @Column(nullable = false)
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    public static BoardListResponse toDto(Board board){
-        return BoardListResponse.builder()
+    private String writer;
+
+    @Column(columnDefinition = "integer default 0")
+    private int view;
+
+    @OneToMany(mappedBy = "Board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OrderBy("id asc")
+    private List<Comment> comments;
+
+    public static BoardListResponseDto toDto(Board board){
+        return BoardListResponseDto.builder()
                 .id(board.getId())
                 .title(board.getTitle())
                 .build();

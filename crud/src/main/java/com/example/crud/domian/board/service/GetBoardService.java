@@ -1,8 +1,7 @@
 package com.example.crud.domian.board.service;
 
-import com.example.crud.domian.board.dto.request.BoardRequest;
-import com.example.crud.domian.board.dto.response.BoardResponse;
+import com.example.crud.domian.board.dto.response.BoardResponseDto;
 
 public interface GetBoardService {
-    BoardResponse execute(Long id);
+    BoardResponseDto execute(Long id);
 }

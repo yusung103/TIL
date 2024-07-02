@@ -1,7 +1,7 @@
-package com.example.crud.domian.comment.dto.comment;
+package com.example.crud.domian.comment.dto.req;
 
+import com.example.crud.domian.board.entity.Board;
 import com.example.crud.domian.comment.entity.Comment;
-import com.example.crud.domian.comment.entity.Posts;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -18,7 +18,7 @@ public class CommentRequestDto {
     private String comment;
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
     private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
-    private Posts posts;
+    private Board board;
 
     public Comment toEntity(){
 
@@ -27,7 +27,7 @@ public class CommentRequestDto {
                 .comment(comment)
                 .createdDate(createdDate)
                 .modifiedDate(modifiedDate)
-                .posts(posts)
+                .board(board)
                 .build();
     }
 }
