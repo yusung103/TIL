@@ -40,9 +40,8 @@ public class User {
     @OneToMany(mappedBy = "user", orphanRemoval = true)
     private List<Comment> comment;
 
-    public void rankUp(UserRole userRole, Authenticator auth){
-        this.userRole = userRole;
-
-
+    public void edit(String newNickname, String newPassword){
+        this.nickname = newNickname;
+        this.password = newPassword;
     }
 }
