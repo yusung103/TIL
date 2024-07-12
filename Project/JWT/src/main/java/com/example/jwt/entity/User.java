@@ -14,8 +14,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
-    public String nickname;
-    public String password;
+    private String nickname;
+    private String password;
+
+    private String role;
 }
