@@ -1,7 +1,5 @@
 package com.example.crud.domian.board.dto.response;
 
-import com.example.crud.domian.board.entity.Board;
-import com.example.crud.domian.comment.dto.resp.CommentResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +18,6 @@ public class BoardResponseDto {
     private String createdDate;
     private String modifiedDate;
     private int view;
-    private List<CommentResponseDto> comments;
 
 //    public BoardResponseDto (Board board){
 //

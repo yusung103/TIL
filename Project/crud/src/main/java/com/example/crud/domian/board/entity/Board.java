@@ -2,8 +2,6 @@ package com.example.crud.domian.board.entity;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
 import com.example.crud.domian.board.dto.response.BoardListResponseDto;
-import com.example.crud.domian.comment.entity.Comment;
-import com.example.crud.global.entity.TimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "board")
-public class Board extends TimeEntity {
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,10 +28,6 @@ public class Board extends TimeEntity {
 
     @Column(columnDefinition = "integer default 0")
     private int view;
-
-    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    @OrderBy("id asc")
-    private List<Comment> comments;
 
     public static BoardListResponseDto toDto(Board board){
         return BoardListResponseDto.builder()
