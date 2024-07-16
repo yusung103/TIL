@@ -14,10 +14,10 @@ public class BoardResponseDto {
     private Long id;
     private String title;
     private String content;
-    private String writer;
-    private String createdDate;
-    private String modifiedDate;
-    private int view;
+//    private String writer;
+//    private String createdDate;
+//    private String modifiedDate;
+//    private int view;
 
 //    public BoardResponseDto (Board board){
 //
