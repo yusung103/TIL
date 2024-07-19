@@ -4,18 +4,17 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver;
 
 @RequiredArgsConstructor
 public class LoginFilter extends UsernamePasswordAuthenticationFilter {
 
     private final AuthenticationManager authenticationManager;
+    
     public Authentication attempAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
 
@@ -29,7 +28,9 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         return authenticationManager.authenticate(authToken);
     }
 
+    // 로그인 성공시 실행
     protected void successfulAuth(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) {}
 
+    // 로그인 실패시 실행
     protected void unsuccessfulAuth (HttpServletRequest request, HttpServletResponse response, AuthenticationException failed){}
 }
