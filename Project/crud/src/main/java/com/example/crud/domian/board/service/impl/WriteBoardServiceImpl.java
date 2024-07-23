@@ -14,11 +14,12 @@ import org.springframework.stereotype.Service;
 public class WriteBoardServiceImpl implements WriteBoardService {
 
     private final BoardRepository boardRepository;
+
+
     public void execute(BoardRequest writeBoardRequest) {
-        Board board = Board.builder()
-                .title(writeBoardRequest.getTitle())
-                .content(writeBoardRequest.getContent())
-                .build();
+        Board board = new Board();
+        board.setTitle(writeBoardRequest.getTitle());
+        board.setContent(writeBoardRequest.getContent());
 
         boardRepository.save(board);
     }
