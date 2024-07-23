@@ -17,9 +17,10 @@ public class WriteBoardServiceImpl implements WriteBoardService {
 
 
     public void execute(BoardRequest writeBoardRequest) {
-        Board board = new Board();
-        board.setTitle(writeBoardRequest.getTitle());
-        board.setContent(writeBoardRequest.getContent());
+        Board board = Board.builder()
+                .title(writeBoardRequest.getTitle())
+                .content(writeBoardRequest.getContent())
+                .build();
 
         boardRepository.save(board);
     }
