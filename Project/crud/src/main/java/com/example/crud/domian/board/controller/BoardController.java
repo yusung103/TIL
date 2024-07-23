@@ -16,43 +16,43 @@ import java.util.List;
 @RequestMapping("/board")
 public class BoardController {
 
-    private final WriteBoardService writeBoardService;
-    private final DeleteBoardService deleteBoardService;
-    private final GetBoardListService getBoardListService;
-    private final GetBoardService getBoardService;
-    private final UpdateBoardService updateBoardService;
+    private final WriteBoardService writeBoard;
+    private final DeleteBoardService deleteBoard;
+    private final GetBoardListService getBoardList;
+    private final GetBoardService getBoard;
+    private final UpdateBoardService updateBoard;
 
     /** 글 작성 */
     @PostMapping("/write")
     public ResponseEntity<Void> write(@RequestBody BoardRequest writeBoardRequest){
-        writeBoardService.execute(writeBoardRequest);
+        writeBoard.execute(writeBoardRequest);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     /** 모든 글 불러오기 */
     @GetMapping("/list")
     public ResponseEntity<List<BoardListResponseDto>> getList(){
-        List<BoardListResponseDto> responses = getBoardListService.execute();
+        List<BoardListResponseDto> responses = getBoardList.execute();
         return ResponseEntity.ok(responses);
     }
 
     /** 글 하나 불러오기 */
     @GetMapping("/{id}")
     public ResponseEntity<BoardResponseDto> getOne(@PathVariable Long id){
-        BoardResponseDto response = getBoardService.execute(id);
+        BoardResponseDto response = getBoard.execute(id);
         return ResponseEntity.ok(response);
     }
 
     /** 글 수정 */
     @PatchMapping("/{id}")
     public ResponseEntity<Void> updateBoard(@PathVariable Long id, @RequestBody BoardRequest boardRequest){
-        updateBoardService.execute(boardRequest, id);
+        updateBoard.execute(boardRequest, id);
         return ResponseEntity.noContent().build();
     }
 
     /** 글 삭제 */
     @DeleteMapping("/{id}")
     public Long delete(@PathVariable Long id){
-        return deleteBoardService.execute(id);
+        return deleteBoard.execute(id);
     }
 }
