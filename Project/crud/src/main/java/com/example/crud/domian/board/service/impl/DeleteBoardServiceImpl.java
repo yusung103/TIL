@@ -1,6 +1,4 @@
 package com.example.crud.domian.board.service.impl;
-
-import com.example.crud.domian.board.entity.Board;
 import com.example.crud.domian.board.repository.BoardRepository;
 import com.example.crud.domian.board.service.DeleteBoardService;
 import com.example.crud.global.exception.CustomException;
@@ -16,12 +14,10 @@ public class DeleteBoardServiceImpl implements DeleteBoardService {
 
     private final BoardRepository boardRepository;
 
-    public Long execute(Long id){
+    public void execute(Long id){
         boardRepository.findById(id).orElseThrow(
                 () -> new CustomException(ErrorCode.BOARD_NOT_FOUND));
 
         boardRepository.deleteById(id);
-
-        return id;
     }
 }
