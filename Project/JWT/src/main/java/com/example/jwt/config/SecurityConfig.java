@@ -1,5 +1,6 @@
 package com.example.jwt.config;
 
+import com.example.jwt.jwt.JWTFilter;
 import com.example.jwt.jwt.JWTUtil;
 import com.example.jwt.jwt.LoginFilter;
 import lombok.RequiredArgsConstructor;
@@ -47,6 +48,8 @@ public class SecurityConfig {
                 .requestMatchers("login/","/","/join").permitAll()
                 .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated());
+
+        http    .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class);
 
         http    .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
