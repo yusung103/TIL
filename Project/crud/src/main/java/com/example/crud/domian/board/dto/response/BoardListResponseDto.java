@@ -8,5 +8,4 @@ import lombok.Getter;
 public class BoardListResponseDto {
     private Long id;
     private String title;
-
 }
