@@ -1,4 +1,4 @@
-package Kotlin.funciton
+package Kotlin.함수
 
 fun main(args: Array<String>) {
     val price1 = 100

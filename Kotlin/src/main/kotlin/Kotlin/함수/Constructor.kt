@@ -1,4 +1,4 @@
-package Kotlin.funciton
+package Kotlin.함수
 
 fun main(args: Array<String>) {
     val item = Item_("연필", 1000)
