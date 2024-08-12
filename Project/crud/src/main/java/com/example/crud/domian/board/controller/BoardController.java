@@ -52,7 +52,7 @@ public class BoardController {
 
     /** 글 삭제 */
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable Long id){
         deleteBoard.execute(id);
     }
 }

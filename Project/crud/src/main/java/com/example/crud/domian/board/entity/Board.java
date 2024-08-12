@@ -24,11 +24,6 @@ public class Board {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    private String writer;
-
-    @Column(columnDefinition = "integer default 0")
-    private int view;
-
     public static BoardListResponseDto toDto(Board board){
         return BoardListResponseDto.builder()
                 .id(board.getId())

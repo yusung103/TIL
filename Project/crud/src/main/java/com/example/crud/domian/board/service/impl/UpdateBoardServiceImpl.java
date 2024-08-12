@@ -2,6 +2,7 @@ package com.example.crud.domian.board.service.impl;
 
 import com.example.crud.domian.board.dto.request.BoardRequest;
 import com.example.crud.domian.board.entity.Board;
+import com.example.crud.domian.board.exception.BoardNotFoundException;
 import com.example.crud.domian.board.repository.BoardRepository;
 import com.example.crud.domian.board.service.UpdateBoardService;
 import com.example.crud.global.exception.CustomException;
@@ -17,9 +18,7 @@ public class UpdateBoardServiceImpl implements UpdateBoardService {
     private final BoardRepository boardRepository;
     @Override
     public void execute(BoardRequest boardRequest, Long id) {
-        Board board = boardRepository.findById(id).orElseThrow(
-                () -> new CustomException(ErrorCode.BOARD_NOT_FOUND)
-        );
+        Board board = boardRepository.findById(id).orElseThrow(BoardNotFoundException::new);
          board.update(boardRequest);
          boardRepository.save(board);
     }
