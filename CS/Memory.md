@@ -1,9 +1,9 @@
-# Memory 
 > 기억장치라고도 불리는 하드웨어는 CPU가 실행할 프로그램을 저장하는 곳
+# Memory 
 
 - **주 기억장치 (Main Memory Unit)**
   - RAM(휘발성), ROM(비휘발성)으로 구성
-- 보조기억장치 (Auxiliary Memory Unit)
+- **보조기억장치 (Auxiliary Memory Unit)**
   - 하드디스크, USB 등을 지칭
 - **캐시 메모리 (Cache Memory)**
   - 전원이 차단되면 데이터가 사라짐 = 휘발성
@@ -33,3 +33,21 @@
 - 전원이 차단되어도 데이터가 저장되는 비휘발성 메모리
 - BIOS (Basic Input Output System)
   - 컴퓨터의 기본 입/출력장치나 메모리 등 하드웨어 작동에 필요한 명령을 모아놓은 프로그램
+
+## 📌 보조 기억장치
+물리적인 디스크가 연결되어 있는 기억장치
+- 컴퓨터의 전원을 끄더라도 데이터가 사라지지 않고 영구적 보관 가능
+- HDD, SSD가 있음
+
+### HDD(Hard Disk Driver)
+![HDD](https://velog.velcdn.com/images/alicesykim95/post/ba2791af-5231-4ec9-a2fb-0926d9d29821/%5B%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD%5D%20%E1%84%8E%E1%85%A1%E1%84%85%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%92%E1%85%A1%E1%84%83%E1%85%B3%E1%84%83%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%20Endurastar%20J4K320(1).jpeg)
+
+- 물리적인 디스크를 고속으로 회전시켜 데이터를 저장하는 장치
+- 충격에 약하고 소음이 다소 발생함
+- SSD가 나오면서 소명되는 추세
+
+### SSD(Solid State Driver)
+![SSD](https://velog.velcdn.com/images%2Falicesykim95%2Fpost%2F8ef1ca38-7f9d-4d71-af54-85de9f55cd12%2Fintel-ssd-670p_720.jpeg)
+
+- 반도체 기반의 정보를 저장하는 장치
+- 전기적으로 데이터를 저장하기 때문에 HDD에 비해 빠르고 소음도 발생하지 않음
