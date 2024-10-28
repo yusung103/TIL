@@ -7,7 +7,7 @@ Java Database Connectivity로 Java 기반 애플리케이션의 데이터를 데
 ---
 ### 📌 JDBC 표준 인터페이스
 
-![Alt text](image.png)
+![표준 인터페이스](TIL/Spring/image/image.png)
 
 3가지 기능을 표준 인터페이스로 정의하여 제공
 - java.sql.Connection - 연결
@@ -17,7 +17,7 @@ Java Database Connectivity로 Java 기반 애플리케이션의 데이터를 데
 Spring Data JDBC, Spring Data JPA등 기술이 나오면서 직접적으로 JDBC를 만질 일은 없지만 동작 흐름 정도는 알아두자.
 
 ### 📌 JDBC 동작 흐름
-![Alt text](image-1.png)
+![동작 흐름](TIL/Spring/image/image-1.png)
 JDBC API를 사용하기 위해선 JDBC 드라이버를 로딩 후 데이터베이스를 연결해야한다.
 #### 📎 JDBC 드라이버
 - 데이터베이스와 통신을 하는 인터페이스
