@@ -15,4 +15,4 @@
 |Job|배치처리 과정을 하나의 단위로 만들어 놓은 객체. <br> 배치 처리과정 중 최상단에 위치 |
 |JobInstance|Job의 실행 단위. Job을 실행하면 하나의 JobInstance가 생성.|
 |JobParameters|JobInstance의 구별 객체. 외에도 개발자 JobInstance에 전달되는 매개변수 <br> String, Double, Long, Date 4가지 형식 지원 |
-|JobExcution|JobInstance에 대한 실행 시도 객체. 
+|JobExcution|JobInstance에 대한 실행 시도 객체. |
